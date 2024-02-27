@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+
+
+
+</head>
+
+<!-- ====== Blog Section End
+<div>
+    <h1 class="text-center text-2xl text-green-300 font-bold">Courses</h1>
+    <ul class="text-center">
+
+            <li class="text-center text-2xl text-blue-700 font-bold"></li><br>
+            <li class="text-center text-2xl text-blue-700 font-bold"></li><br>
+
+            <li>No courses found or available! yet!</li>
+
+    </ul>
+    <h1 class="text-center text-2xl text-green-300 font-bold">Welcome to the homepage of this site.</h1>
+    <h1 id="text" class="text-center text-2xl text-yellow-500 font-bold"></h1>
+    <p class="text-1xl font-bold text-center text-blue-700" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet dicta ea esse est illo minima numquam porro quisquam repellendus. Consequuntur dolorum et eveniet ipsum iusto quas quis repellat sed.</p>
+
+</div>
+
+
+</body> -->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body class="h-screen  overflow-hidden flex-wrap items-center bg-gray-100 justify-center" >
+
+
+    <!-- ====== Blog Section Start -->
+<div class=" ">
+    <section class="pt-20 pb-10 lg:pt-[120px]  lg:pb-20">
+      <div class="container  mx-auto">
+        <div class="-mx-auto flex flex-wrap">
+          {% for course in courses %}
+          <div class="w-full  px-4 md:w-1/2 lg:w-1/3">
+            <div class="mx-auto mb-10 max-w-[370px]">
+              <div class="mb-5 overflow-hidden  rounded">
+
+                <img
+                  src="{{ course.image.url }} "
+                  alt="image"
+                  class="w-full z-40 relative"
+                />
+              </div>
+              <div class=" item-center">
+                <h3 class="mb-2">
+                    <span
+                      class="bg-primary mb-3inline-block text-center font-bold text-base text-gray-500"
+                    >
+                      <span class="text-blue-400 font-semibold">Title:</span> {{ course.title}}
+                    </span>
+                </h3>
+                <h3 class="text-gray-500 mb-2 hover:text-primary mb-3inline-block text-base font-bold ">
+
+                   <span class="text-blue-400 font-semibold">Updated:</span> {{ course.updated }}
+
+                </h3>
+                <p class="text-body-color mb-2 mb-3inline-block hover:text-primary  text-gray-500 font-bold text-base">
+                   <span class="text-blue-400 font-semibold">Description:</span> {{course.description}}
+                </p>
+                <h3 class="mb-2">
+                <span
+                  class="bg-primary  mb-3inline-block rounded   text-center font-bold text-base text-gray-500"
+                >
+                  <span class="text-blue-400 font-semibold">Created by:</span> {{ course.created_by}}
+                </span>
+                </h3>
+                <span
+                  class="bg-primary mb-2 mb-3inline-block rounded   text-center font-bold text-base text-gray-500"
+                >
+                  <span class="text-blue-400 font-semibold">Students:</span> {{ course.noOfStudent}}
+                </span>
+              </div>
+              <div class="flex justify-between mt-4 items-center">
+                <a href="{% url 'signup' %}"
+                    class="relative self-start inline-block px-8 py-4 mx-auto mt-0 text-center font-bold text-white bg-indigo-500 hover:bg-indigo-600 border-t border-gray-200 rounded-md shadow-xl sm:mt-1 fold-bold w-full lg:mx-0">Enroll now!!</a>
+                  
+              </div>
+            </div>
+              
+          </div>
+          {% empty %}
+            <p>There is no course found or available yet!</p>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+
+
+</div>
+
+  <!-- ====== Blog Section End -->
+{% endblock content %}
+</body>
+</html>

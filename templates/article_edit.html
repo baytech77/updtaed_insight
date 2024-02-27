@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="item-center font-semibold mx-auto container" >
+<h1 class="text-lg font-bold">Edit</h1>
+<form action="" class="mt-5" method="post">{% csrf_token %}
+{{ form.as_p }}
+<button class="text-md mt-5 hover:bg-indigo-600 text-white bg-indigo-400 py-1 px-2 rounded-lg" type="submit">Update</button>
+</form>
+</div>
+{% endblock content %}

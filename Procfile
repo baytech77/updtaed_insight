@@ -1,0 +1,1 @@
+web: gunicorn insight_voice.wsgi --log-file -

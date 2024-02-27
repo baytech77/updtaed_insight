@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-xl font-bold">Delete</h1>
+<form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "<span class="font-bold text-blue-600">{{ article.title }}</span>"?</p>
+<button class="text-md mt-5 hover:bg-indigo-600 text-white bg-indigo-400 py-1 px-2 rounded-lg" type="submit">Confirm</button>
+    <span><a class="text-md mt-5 hover:bg-indigo-600 text-white bg-indigo-400 py-1 px-2 rounded-lg" href="{% url 'article_list'%}">Cancel</a></span>
+</form>
+{% endblock content%}
