@@ -23,5 +23,5 @@ class Courses(models.Model):
     image = models.ImageField(upload_to='images/courses')
 
     def __str__(self):
-        return f"{self.title}"
+        return f"{self.title[:50]}"
         # created_by:{self.created_by},updated:{self.updated},date_created:{self.date_created}"

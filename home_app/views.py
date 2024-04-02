@@ -7,7 +7,7 @@ from .models import Courses
 # Create your views here.
 # def home(request):
 # return render(request, 'home/index.html')
-class HomePageView( LoginRequiredMixin,ListView):
+class HomePageView(LoginRequiredMixin, ListView):
     model = Courses
     template_name = 'home/index.html'
     context_object_name = 'courses'
