@@ -11,7 +11,7 @@ class SignUpView(CreateView):
     template_name = 'registration/signup.html'
 
 
-# class ChangePasswordView(CreateView):
-#    form_class = CustomUserCreationForm
-#    success_url = reverse_lazy('login')
-#    template_name = 'registration/password_change_form.html'
+class ChangePasswordView(CreateView):
+    form_class = CustomUserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/password_change_form.html'

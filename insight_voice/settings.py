@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
-import django_heroku
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -96,11 +96,13 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'insight_database',
+        'NAME': 'insigth_voice',
+        #'NAME': BASE_DIR / "db.sqlite3",
         'USER': 'postgres',
-        'PASSWORD': 'BAYu@1234',
+        'PASSWORD': 'BAYu@12345',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5422',
+        #'PORT': '',
     }
 }
 
@@ -174,7 +176,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 TIME_ZONE = 'America/New_York'
 
 # setting Heroku
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
  
 # CSRF_COOKIE_NAME = 'csrftoken'
 # CSRF_COOKIE_AGE = 60 * 60 * 24 * 7 * 2  # Two weeks

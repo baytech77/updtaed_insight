@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+
+  {% extends 'base.html' %}
+  {% load crispy_forms_tags %}
+  {% load tailwind_filters %}
+  {% block content %}
   <head>
     <meta charset="UTF-8" />
     <title>login</title>
   </head>
-  <body class="bg-gray-200">
-    {% extends 'base.html' %} {% load crispy_forms_tags %} {% load
-    tailwind_filters %} {% block content %}
 
     <div
       class="relative antialiased flex text-gray-800 mt-21flex-col justify-center overflow-hidden py-4 sm:py-12"
@@ -54,6 +54,5 @@
         </div>
       </div>
     </div>
-  </body>
   {% endblock content %}
-</html>
+
